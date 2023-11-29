@@ -1,4 +1,4 @@
-SI350 Project: Pet Karl!
+SI350 Project: Pet The Dog!
 
 Created By: Matthew Kousiry & Jon Behling
 

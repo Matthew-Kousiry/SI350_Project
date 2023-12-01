@@ -4,6 +4,10 @@ echo "login clicked";
 function getUserAndHash($Arr, $id) {
     $lines = files("LOG.txt");
     
+    //key = index, val = line
+    foreach ($lines as $index => $line) {
+        $split = explode("::",$line);
+    }
 }
 
 

@@ -1,3 +1,13 @@
+<?php
+  //page only available to logged in participatents. 
+  session_start();
+
+  if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit();
+  }
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -6,7 +16,7 @@
   <!--meta data about the HTML document, to include character set, style (i.e.
     CSS, etc.) author, etc.)-->
   <meta charset="utf-8" />
-  <meta name="description" content="Pet The Dog Homepage">
+  <meta name="description" content="Pet The Dog">
   <meta name="keywords" content="HTML, CSS, JavaScript">
   <meta name="author" content="Matthew Kousiry">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,18 +45,16 @@ height: auto;
     <li class = "nav"><a  class = "nav" href="logout.php">Logout</a></li>
     <li class = "nav"><a class = "nav" href="leaderboard.html">Leaderboard</a></li>
     <li class = "nav"><a class = "nav" href="bruce.php">Play</a></li>
-  </ul>
+</ul>
 
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">About Bruce</h1>
-      <img src="img/ipconfig.png" class="img-thumbnail" alt="ipconfig">
-      <p class="lead"><span data-mce-mark="1">Bruce the Golden Retriever has
-        been fondly remembered as a true "man's best friend." Aside from his
-        carefree nature and loving attitude, Bruce is a decorated combat veteran
-      seeking a forever home from his fans in the world of cyberspace. By combat
-      I mean mericlessly giving you love and affection without your consent. In
-      a word, Bruce is a true example of unconditional love in the modern world.</span></p>
-    </div>
+<div class="jumbotron text-center">
+  <h1>Chatbox</h1>
 </div>
+
+
+  
+
+<br>
+
+<img src="img/bruce1.jpeg" class="rounded-circle">
 

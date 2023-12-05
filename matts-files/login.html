@@ -26,6 +26,7 @@
     <li class = "nav"><a  class = "nav" href="login.html">Login</a></li>
     <li class = "nav"><a  class = "nav" href="logout.php">Logout</a></li>
     <li class = "nav"><a class = "nav" href="leaderboard.html">Leaderboard</a></li>
+    <li class = "nav"><a class = "nav" href="bruce.php">Play</a></li>
   </ul>
 <div class="mx-auto">
   <div class="jumbotron jumbotron-fluid">
@@ -34,14 +35,14 @@
       
       <form id="loginForm" method="POST">
         <label> Username:</label>
-        <input class="text" id="user">
+        <input class="text" id="user" name="user">
         <br>
         <label> Password:</label>
         
-        <input class="password" id="pass">
+        <input class="password" id="pass" name="pass" type="password" >
         <br>
-        <input class="btn btn-primary" type="submit" value="Create Account" onclick="submitForm('createAcc.php')">
-        <input class="btn btn-primary" type="submit" value="Login" onclick="submitForm('login.php')">
+        <input class="btn btn-primary" type="button" value="Create Account" onclick="submitForm('createAcc.php')">
+        <input class="btn btn-primary" type="button" value="Login" onclick="submitForm('login.php')">
 
       </form>
     </div>
@@ -51,7 +52,8 @@
 <!-- Javascript -->
 <script>
   function submitForm(action) {
-    document.getElementById("loginForm").action = action;
+     document.getElementById("loginForm").action = action;
+     document.getElementById("loginForm").submit();
   }
 </script>
 </body>

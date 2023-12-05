@@ -1,8 +1,7 @@
 <?php
-echo "login clicked";
 
 function getUserAndHash($Arr, $id) {
-    $lines = files("LOG.txt");
+    $lines = file("LOG.txt");
     
     //key = index, val = line
     foreach ($lines as $index => $line) {
@@ -14,15 +13,22 @@ function getUserAndHash($Arr, $id) {
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $id = $_POST["user"];
+    $password = $_POST["pass"];
 
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-
+    
+    
     // Checking a password
-    $enteredPassword = "user_entered_password";
+    $enteredPassword = $password;
 
     if (password_verify($enteredPassword, $hashedPassword)) {
         echo "Password is valid!";
+        header("Location: ./bruce.html");
+        exit();
+        
+        
     } else {
         echo "Invalid password";
     }
+}
 ?>
